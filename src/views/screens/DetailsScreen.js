@@ -30,7 +30,7 @@ const DetailsScreen = ({navigation, route}) => {
           <Icon
             name="arrow-back-ios"
             size={28}
-            color={COLORS.white}
+            color={COLORS.black}
             onPress={navigation.goBack}
           />
           <Icon name="bookmark-border" size={28} color={COLORS.white} />
@@ -46,7 +46,7 @@ const DetailsScreen = ({navigation, route}) => {
             style={{
               fontSize: 12,
               fontWeight: '400',
-              color: COLORS.grey,
+              color: COLORS.red,
               marginTop: 5,
             }}>
             {item.location}
@@ -69,10 +69,10 @@ const DetailsScreen = ({navigation, route}) => {
                 4.0
               </Text>
             </View>
-            <Text style={{fontSize: 13, color: COLORS.grey}}>365reviews</Text>
+            <Text style={{fontSize: 13, color: COLORS.white}}>365reviews</Text>
           </View>
           <View style={{marginTop: 20}}>
-            <Text style={{lineHeight: 20, color: COLORS.grey}}>
+            <Text style={{lineHeight: 20, color: COLORS.black}}>
               {item.details}
             </Text>
           </View>
@@ -86,23 +86,23 @@ const DetailsScreen = ({navigation, route}) => {
             alignItems: 'center',
           }}>
           <Text style={{fontSize: 20, fontWeight: 'bold'}}>
-            Price per night
+            Harga Permalamnya
           </Text>
           <View style={style.priceTag}>
             <Text
               style={{
                 fontSize: 16,
                 fontWeight: 'bold',
-                color: COLORS.grey,
+                color: COLORS.black,
                 marginLeft: 5,
               }}>
-              ${item.price}
+              Rp{item.price}
             </Text>
             <Text
               style={{
                 fontSize: 12,
                 fontWeight: 'bold',
-                color: COLORS.grey,
+                color: COLORS.red,
                 marginLeft: 5,
               }}>
               +breakfast
@@ -111,7 +111,7 @@ const DetailsScreen = ({navigation, route}) => {
         </View>
         <View style={style.btn}>
           <Text style={{color: COLORS.white, fontSize: 18, fontWeight: 'bold'}}>
-            Book Now
+            Pesan Sekarang
           </Text>
         </View>
       </View>
@@ -125,7 +125,7 @@ const style = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 40,
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.dark,
     marginHorizontal: 20,
     borderRadius: 10,
   },
@@ -145,7 +145,7 @@ const style = StyleSheet.create({
     position: 'absolute',
     height: 60,
     width: 60,
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.dark,
     top: -30,
     right: 20,
     borderRadius: 30,

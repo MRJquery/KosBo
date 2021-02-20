@@ -20,7 +20,7 @@ const {width} = Dimensions.get('screen');
 const cardWidth = width / 1.8;
 
 const HomeScreen = ({navigation}) => {
-  const categories = ['All', 'Popular', 'Top Rated', 'Featured', 'Luxury'];
+  const categories = ['All', 'Popular', 'Terlaris', 'Terbaru',];
   const [selectedCategoryIndex, setSelectedCategoryIndex] = React.useState(0);
   const [activeCardIndex, setActiveCardIndex] = React.useState(0);
   const scrollX = React.useRef(new Animated.Value(0)).current;
@@ -40,7 +40,7 @@ const HomeScreen = ({navigation}) => {
                   color:
                     selectedCategoryIndex == index
                       ? COLORS.primary
-                      : COLORS.grey,
+                      : COLORS.dark,
                 }}>
                 {item}
               </Text>
@@ -84,7 +84,7 @@ const HomeScreen = ({navigation}) => {
           <View style={style.priceTag}>
             <Text
               style={{color: COLORS.white, fontSize: 20, fontWeight: 'bold'}}>
-              ${hotel.price}
+              Rp{hotel.price}
             </Text>
           </View>
           <Image source={hotel.image} style={style.cardImage} />
@@ -95,7 +95,7 @@ const HomeScreen = ({navigation}) => {
                 <Text style={{fontWeight: 'bold', fontSize: 17}}>
                   {hotel.name}
                 </Text>
-                <Text style={{color: COLORS.grey, fontSize: 12}}>
+                <Text style={{color: COLORS.red, fontSize: 12}}>
                   {hotel.location}
                 </Text>
               </View>
@@ -112,7 +112,7 @@ const HomeScreen = ({navigation}) => {
                 <Icon name="star" size={15} color={COLORS.orange} />
                 <Icon name="star" size={15} color={COLORS.orange} />
                 <Icon name="star" size={15} color={COLORS.orange} />
-                <Icon name="star" size={15} color={COLORS.grey} />
+                <Icon name="star" size={15} color={COLORS.white} />
               </View>
               <Text style={{fontSize: 10, color: COLORS.grey}}>365reviews</Text>
             </View>
@@ -140,7 +140,7 @@ const HomeScreen = ({navigation}) => {
         <Image style={style.topHotelCardImage} source={hotel.image} />
         <View style={{paddingVertical: 5, paddingHorizontal: 10}}>
           <Text style={{fontSize: 10, fontWeight: 'bold'}}>{hotel.name}</Text>
-          <Text style={{fontSize: 7, fontWeight: 'bold', color: COLORS.grey}}>
+          <Text style={{fontSize: 7, fontWeight: 'bold', color: COLORS.red}}>
             {hotel.location}
           </Text>
         </View>
@@ -153,17 +153,16 @@ const HomeScreen = ({navigation}) => {
       <View style={style.header}>
         <View style={{paddingBottom: 15}}>
           <Text style={{fontSize: 30, fontWeight: 'bold'}}>
-            Find your hotel
+            
           </Text>
           <View style={{flexDirection: 'row'}}>
-            <Text style={{fontSize: 30, fontWeight: 'bold'}}>in </Text>
+            <Text style={{fontSize: 30, fontWeight: 'bold'}}></Text>
             <Text
-              style={{fontSize: 30, fontWeight: 'bold', color: COLORS.primary}}>
-              Paris
+              style={{fontSize: 30, fontWeight: 'bold', color: COLORS.dark}}>
+              KosBo
             </Text>
           </View>
         </View>
-        <Icon name="person-outline" size={38} color={COLORS.grey} />
       </View>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={style.searchInputContainer}>
@@ -203,10 +202,10 @@ const HomeScreen = ({navigation}) => {
             justifyContent: 'space-between',
             marginHorizontal: 20,
           }}>
-          <Text style={{fontWeight: 'bold', color: COLORS.grey}}>
+          <Text style={{fontWeight: 'bold', color: COLORS.white}}>
             Top hotels
           </Text>
-          <Text style={{color: COLORS.grey}}>Show all</Text>
+          <Text style={{color: COLORS.white}}>Show all</Text>
         </View>
         <FlatList
           data={hotels}
@@ -257,7 +256,7 @@ const style = StyleSheet.create({
     elevation: 15,
     marginRight: 20,
     borderRadius: 15,
-    backgroundColor: COLORS.white,
+    backgroundColor: COLORS.red,
   },
   cardImage: {
     height: 200,
@@ -268,7 +267,7 @@ const style = StyleSheet.create({
   priceTag: {
     height: 60,
     width: 80,
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.dark,
     position: 'absolute',
     zIndex: 1,
     right: 0,
